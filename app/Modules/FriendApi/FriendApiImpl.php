@@ -30,6 +30,7 @@ class FriendApiImpl implements FriendApiInterface
     public function createFor(Student $student): Collection
     {
         $friends = collect();
+
         $response = $this->client->get('friends.index');
 
         foreach ($response['results'] as $friend) {
